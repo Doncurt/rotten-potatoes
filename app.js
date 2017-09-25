@@ -23,7 +23,8 @@ app.get('/reviews', function (req, res) {
 })
 /** Connection for Mongoose ODM **/
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/rotten-potatoes');
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/rotten-potatoes');
 /** model for the review **/
 
 app.get('/', function (req, res) {
